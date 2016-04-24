@@ -1,7 +1,0 @@
-
-all: inverse_matrix.cpp
-	g++ inverse_matrix.cpp -std=c++11 -o inverse_matrix.out
-
-run: 
-	@$(MAKE) && ./inverse_matrix.out
-
