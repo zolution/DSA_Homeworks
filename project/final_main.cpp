@@ -42,7 +42,7 @@ int ReadString(string *x) {
     return 1;
 }
 
-int ReadInt(int *x) {
+int ReadInt(long long int *x) {
     char c, neg;
     while((c = readchar()) < '-')    {if(c == EOF) return 0;}
     neg = (c == '-') ? -1 : 1;
@@ -56,7 +56,7 @@ int ReadInt(int *x) {
 struct table_node{
     int index = -1;
     int len;
-    int freq;
+    long long int freq;
     table_node *next = NULL;
 };
 
@@ -76,11 +76,11 @@ void init(){
         for(int i=0;i<amount[h];i++){
             //cerr<<"yee";
             ReadString(&dict[ptr]);
-            int len;
+            long long int len;
             ReadInt(&len);
-            int val;
+            long long int val;
             ReadInt(&val);
-            int freq;
+            long long int freq;
             ReadInt(&freq);
             if(hash_table[h][val].index != -1){
                 table_node* temp = new table_node();
@@ -112,7 +112,7 @@ bool isprepose(string test){
 
 class candidate_struct{
     public:
-        int freq;
+        long long int freq;
         string data;
         candidate_struct(int f,string g){
             freq = f;
@@ -283,7 +283,7 @@ void generate_prepose(){
     return;
 }
 
-int finding(string s,int voc_len){
+long long int finding(string s,int voc_len){
     if(voc_len<=1 || voc_len>5) return -1;
     int hash_result = hashing(s);
     int len_of_s = s.length();
@@ -341,7 +341,7 @@ int main(int argc, char** argv){
         int ans_co = 0;
         for(auto u=candidate_set.begin();u!=candidate_set.end() && v!=candidate_set_voc_length.end();u++){
             //cout<<*u<<" "<<*v<<endl;
-            int aim_freq = finding(*u,*v);
+            long long int aim_freq = finding(*u,*v);
             //cout<<*u<<" "<<aim_freq<<" "<<*v<<'\n';
             if(aim_freq==-1){
                 v++;

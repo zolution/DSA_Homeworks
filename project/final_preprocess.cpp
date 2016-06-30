@@ -40,7 +40,7 @@ int ReadString(string *x) {
     return 1;
 }
 
-int ReadInt(int *x) {
+int ReadInt(long long int *x) {
     char c, neg;
     while((c = readchar()) < '-')    {if(c == EOF) return 0;}
     neg = (c == '-') ? -1 : 1;
@@ -72,7 +72,7 @@ int main(int argc, char** argv) {
             int cou = 0;
             cout<<x<<'\n'<<len<<'\n'<<hashing(x)<<'\n';
             corr++;
-            int y = 0;
+            long long int y = 0;
             ReadInt(&y);
             cout<<y<<'\n';
 
